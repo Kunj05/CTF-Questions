@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selling Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Course Hub</h1>
+</header>
+
+<div class="hero">
+    <!-- Comment: User can buy course for free-->
+    <!-- Comment: So dont reveal the important inforamtion in the comments-->
+    <h2>Unlock Your Potential with Our Courses!</h2>
+    <p>Learn from industry experts at your own pace.</p>
+    <button onclick="alert('Try to inspect the web page')">Browse Courses</button>
+</div>
+
+<div class="course-card">
+    <!-- Misleading comments suggesting potential vulnerabilities -->
+    <h3>Course Title</h3>
+    <p>Brief description of the course goes here.</p>
+    <p>Price: $99</p>
+    <button onclick="location.href='buy-now.html'">Enroll Now</button>
+</div>
+
+<script>
+    document.querySelector('button').addEventListener('click', function() {
+        document.body.style.backgroundColor = 'lightcoral';
+        document.getElementById('sensitive-info').style.display = 'block'; 
+    });
+</script>
+
+</body>
+</html>

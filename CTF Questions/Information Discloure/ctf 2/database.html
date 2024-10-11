@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Disclosure</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff; 
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+
+        .container {
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px; 
+            text-align: center; 
+            width: 300px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px; 
+        }
+
+        input[type="text"] {
+            width: 100%; 
+            padding: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+
+        button {
+            background-color: #28a745; 
+            color: white;
+            padding: 10px 15px; 
+            margin-top: 10px;
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .error {
+            color: red;
+            margin-top: 15px;
+        }
+
+        .hint {
+            color: orange;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Database Access</h1>
+        <p>Enter the database name and password to proceed.</p>
+        
+        <form onsubmit="event.preventDefault(); submitForm();">
+            <label for="dbname">Database Name:</label>
+            <input type="text" id="dbname" required placeholder="Enter database name">
+            <label for="dbpassword">Database Password:</label>
+            <input type="text" id="dbpassword" required placeholder="Enter password">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="error-message" class="error"></div>
+        <div id="hint-message" class="hint"></div>
+        <footer>
+            <p>Access can!</p>
+        </footer>
+    </div> 
+    <script>
+        function submitForm() {
+            const correctDbName = atob("dGVzdF9kYl9uYW1l"); // Base encoded
+            const correctDbPassword = atob("cGFzc3dvcmQ="); // Base encoded
+
+            // Get user input
+            const dbNameInput = document.getElementById('dbname').value;
+            const dbPasswordInput = document.getElementById('dbpassword').value;
+
+            const errorMessage = document.getElementById('error-message');
+            const hintMessage = document.getElementById('hint-message');
+            errorMessage.textContent = ""; 
+            hintMessage.textContent = ""; 
+
+            if (dbNameInput === correctDbName && dbPasswordInput === correctDbPassword) {
+                const a = document.createElement('a');
+                a.href = atob('ZGF0YWJhc2VfaW5mby50eHQ='); 
+                a.download = atob('ZGF0YWJhc2VfaW5mby50eHQ=');
+                document.body.appendChild(a);
+                a.click(); 
+                document.body.removeChild(a); 
+            } else {
+                errorMessage.textContent = "Invalid Try to Convert it into plain text";
+            }
+
+
+        }
+    </script>
+</body>
+</html>

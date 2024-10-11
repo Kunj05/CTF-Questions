@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now - Course Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .payment-card, .flag-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"], input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function checkDetails() {
+            const cardNumber = document.getElementById("card-number").value;
+            const cvv = document.getElementById("cvv").value;
+
+            if (cvv === "123" && cardNumber === "4111 1111 1111 1111") {
+                window.location.href = "ctf.html"; 
+            } else {
+                alert("Incorrect details! Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="payment-card">
+    <h3>Payment Details</h3>
+    <!-- Comment: CVV = "123" . -->
+    <!-- Comment: Card Number to "4111 1111 1111 1111"  -->
+    <input type="text" id="card-number" placeholder="Card Number" required>
+    <input type="number" id="cvv" placeholder="CVV" required>
+    <button onclick="checkDetails()">Complete Purchase</button>
+</div>
+
+
+</body>
+</html>

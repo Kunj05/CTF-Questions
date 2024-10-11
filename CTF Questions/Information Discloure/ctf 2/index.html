@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Disclosure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <div>
+            <!-- 
+                Follow the important comments 
+                Each comment can help u connect the dots
+            -->
+            <div class="container">
+                <div>
+                    <div>
+                        <h1>Welcome to the Club!</h1>
+                        
+                        <p>As a valued member, you have access to a wealth of resources designed to enhance your experience. Explore valuable guides, in-depth tutorials, and insights from industry experts to support your growth.</p>
+                        <div>
+                            <div>
+                                <p>Your data will be securely stored with us in our <a href="database.html" style="font-size:18px ;color: rgb(56, 55, 55); text-decoration: none;cursor: text">system</a>, ensuring confidentiality and privacy.
+                                </p>
+                                <p >
+                                    Our curated content covers a wide range of topics, ensuring you have the tools you need to succeed. Engage with interactive features and participate in exclusive webinars to deepen your understanding.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>To unlock even more exclusive content, please upload a file below to complete your membership application!</p>
+                        
+                <!-- File Upload Section -->
+                <div class="upload-container">
+                    <h2>Upload a File</h2>
+                    <input type="file" id="fileInput" accept=".txt,.jpg,.png" onchange="uploadFile()"> 
+                    <div id="uploadMessage"></div>
+                </div>
+                <!-- For Developer : Data will be stored is the database, if u want the data get the name and password from the Developer Team  -->
+                <script>
+                </script>
+            </div>
+        </div>
+    </div>
+ 
+
+    <script>
+            function alertUser() {
+                console.log("Check for other files that might hold clues!");
+            }
+            alertUser();
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadMessage = document.getElementById('uploadMessage');
+            
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                uploadMessage.textContent = `File name is stored in the database file!`;
+                uploadMessage.style.color = '#28a745'; 
+            } else {
+                uploadMessage.textContent = 'Please select a file to upload.';
+                uploadMessage.style.color = '#dc3545'; 
+            }
+        }
+</script>
+
+    </script>
+</body>
+</html>
